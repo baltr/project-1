@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link>
     </div>
     <div class="col-9">
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@
 }
 
 #app {
-  margin-left:25px;
+  margin-left: 25px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,17 +51,21 @@ label {
   background-color: #303841;
 }
 
-.fl-left{
-  float:left;
+.fl-left {
+  float: left;
 }
 
-.fl-right{
-  float:right;
+.fl-right {
+  float: right;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 [class*="col-"] {
@@ -70,25 +74,49 @@ label {
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
-
-  #app{
-    margin-left:20%;
+  .col-1 {
+    width: 8.33%;
   }
-  .ta-right{
-  text-align:right;
-  padding-right:20px;
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+
+  #app {
+    margin-left: 20%;
+  }
+  .ta-right {
+    text-align: right;
+    padding-right: 20px;
   }
 }
 </style>
