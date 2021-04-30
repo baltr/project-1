@@ -19,11 +19,11 @@
             </div>
             <div class="col-12 fl-left specDetail">
                 <label for="summ">SUMMARY</label>
-                <div id="summ">{{ details.summary }}</div>
+                <div id="summ"><span v-html="details.summary"/></div>
             </div>
             <div v-if="isVisible" class="col-12 fl-left specDetail">
                 <label for="desc">DESCRIPTION</label>
-                <div id="desc">{{ details.description }}</div>
+                <div id="desc"><span v-html="details.description"/></div>
             </div>
         </div>
     </div>
@@ -55,10 +55,10 @@ export default {
     },
     computed:{
         startTime(){
-            return DateTime.fromISO(this.details.start).toLocaleString(DateTime.DATETIME_SHORT);
+            return DateTime.fromISO(this.details.start).toFormat("d. M. yyyy. H:mm");
         },
         endTime(){
-            return DateTime.fromISO(this.details.end).toLocaleString(DateTime.DATETIME_SHORT);
+            return DateTime.fromISO(this.details.end).toFormat("d. M. yyyy. H:mm");
         },
         isVisible(){
             if (this.details.id != this.activeEvent || !this.visible){
