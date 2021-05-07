@@ -33,6 +33,7 @@ export default {
       .get("https://meeting-rooms.superology.dev/", { headers: { authentication: "drSsLeYSzdWVgwqKFk6mFt66X3ZWETQW" } })
       .then((response) => {
         this.rooms = response.data.rooms;
+        this.$store.rooms = this.rooms;
       })
       .catch((response) => {
         console.log(response);
@@ -41,7 +42,11 @@ export default {
     }
   },
   created() {
-    this.axiosGet();
+    if (this.$store.rooms == null){
+      this.axiosGet();
+    } else {
+      this.rooms = this.$store.rooms
+    }
   },
   name: "Home",
   components: {
