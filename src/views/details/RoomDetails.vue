@@ -47,6 +47,9 @@ export default {
       })
       .then((response) => {
         this.roomDetails = response.data.events.map((event) => {
+          if (event.description.length == 0){
+            event.description = "This event has no description"
+          }
           return {
             ...event,
             id: uuidV4(),

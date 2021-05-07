@@ -53,6 +53,6 @@ a {
   background-color: #673ab7;
 }
 .name {
-  width: 95%;
+  width: 92%;
 }
 </style>
