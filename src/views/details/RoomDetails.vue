@@ -29,21 +29,17 @@ export default {
   data() {
     return {
       roomDetails: null,
-      error: false,
       activeEvent: null,
     };
   },
   methods: {
-    axiosGet(){
+    fetchDetails(){
       axios
       .get("https://meeting-rooms.superology.dev/room?id=" + this.$route.params.id, {
         headers: { authentication: "drSsLeYSzdWVgwqKFk6mFt66X3ZWETQW" },
       })
       .then((response) => {
         this.roomDetails = response.data.events.map((event) => {
-          if (event.description.length == 0){
-            event.description = "This event has no description"
-          }
           return {
             ...event,
             id: uuidV4(),
@@ -64,7 +60,7 @@ export default {
     },
   },
   created() {
-    this.axiosGet();
+    this.fetchDetails();
   },
   components: {
     RoomDetailsSpecific,

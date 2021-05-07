@@ -1,9 +1,7 @@
 <template>
   <router-link :to="routePath">
     <div class="fl-left room col-12">
-      <div class="name fl-left">
-        <h4>{{ room.name }}</h4>
-      </div>
+      <h4 class="name fl-left">{{ room.name }}</h4>
       <div class="fl-right">
         <img src="@/assets/arrow_right.png" />
       </div>

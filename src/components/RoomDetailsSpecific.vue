@@ -26,7 +26,8 @@
           <div class="col-12 fl-left specDetail">
             <label for="desc">DESCRIPTION</label>
             <div id="desc" class="description">
-              <span v-html="details.description" />
+              <span v-if="details.description.length" v-html="details.description" />
+              <div v-else>This room currently has no details</div>
             </div>
           </div>
         </div>
