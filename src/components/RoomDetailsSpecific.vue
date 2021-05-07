@@ -37,14 +37,8 @@
 import { DateTime } from "luxon";
 
 export default {
-  data() {
-    return {
-      visible: false,
-    };
-  },
   methods: {
     emitActiveEvent() {
-      this.visible = !this.visible;
       this.$emit("setActiveEvent", this.details.id);
     },
   },
@@ -65,8 +59,7 @@ export default {
       return DateTime.fromISO(this.details.end).toFormat("d. M. yyyy. H:mm");
     },
     isVisible() {
-      if (this.details.id != this.activeEvent || !this.visible) {
-        this.visible = false;
+      if (this.details.id != this.activeEvent) {
         return false;
       }
       return true;
@@ -95,7 +88,7 @@ label {
   cursor: pointer;
 }
 .description {
-  padding-right: 15px;
+  padding-right: 20px;
   text-align: justify;
 }
 </style>

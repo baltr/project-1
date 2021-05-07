@@ -1,7 +1,8 @@
 <template>
   <div class="detailsList">
-    <h1>{{ $route.params.roomName }}</h1>
-    <div v-if="roomDetails">
+    <h1>{{ $route.params.name }}</h1>
+    <div v-if="error">An error occurred while showing room details.</div>
+    <div v-else-if="roomDetails">
       <div v-if="roomDetails.length">
         <RoomDetailsSpecific
           @setActiveEvent="setActiveEvent"
@@ -15,7 +16,6 @@
         The room is currently empty.
       </div>
     </div>
-    <div v-else-if="error">An error occurred while showing room details.</div>
     <div class="loader" v-else></div>
   </div>
 </template>
@@ -30,20 +30,14 @@ export default {
     return {
       roomDetails: null,
       error: false,
-      link: "https://meeting-rooms.superology.dev/room?id=",
-      token: "drSsLeYSzdWVgwqKFk6mFt66X3ZWETQW",
       activeEvent: null,
     };
   },
   methods: {
-    setActiveEvent(value) {
-      this.activeEvent = value;
-    },
-  },
-  created() {
-    axios
-      .get(this.link + this.$route.params.id, {
-        headers: { authentication: this.token },
+    axiosGet(){
+      axios
+      .get("https://meeting-rooms.superology.dev/room?id=" + this.$route.params.id, {
+        headers: { authentication: "drSsLeYSzdWVgwqKFk6mFt66X3ZWETQW" },
       })
       .then((response) => {
         this.roomDetails = response.data.events.map((event) => {
@@ -57,8 +51,20 @@ export default {
         });
       })
       .catch((response) => {
+        console.log(response);
         this.error = true;
       });
+    },
+    setActiveEvent(value) {
+      if(this.activeEvent == value){
+        this.activeEvent = null;
+      } else {
+        this.activeEvent = value;
+      }
+    },
+  },
+  created() {
+    this.axiosGet();
   },
   components: {
     RoomDetailsSpecific,
