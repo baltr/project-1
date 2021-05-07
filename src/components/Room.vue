@@ -27,30 +27,6 @@ export default {
 };
 </script>
 
-<style>
-h4 {
-  margin: 0;
-  padding: 6px 0 0 20px;
-}
-img {
-  padding-top: 3px;
-  height: 24px;
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-.room {
-  margin-bottom: 15px;
-  background-color: #3a434d;
-  padding: 10px 0px;
-  border-radius: 5px;
-}
-.room:hover {
-  background-color: #673ab7;
-  transition: all 0.3s ease;
-}
-.name {
-  width: 92%;
-}
+<style lang="scss">
+  @import "../assets/styles/room.scss"
 </style>

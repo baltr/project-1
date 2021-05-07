@@ -72,38 +72,6 @@ export default {
 };
 </script>
 
-<style>
-label {
-  font-size: 12px;
-}
-.details {
-  margin-bottom: 15px;
-  background-color: #3a434d;
-  padding: 10px 0 10px 20px;
-}
-.details a {
-  text-decoration: revert;
-  color: #673ab7;
-}
-.specDetail {
-  margin-bottom: 10px;
-}
-.cursor {
-  cursor: pointer;
-}
-.description {
-  padding-right: 20px;
-  text-align: justify;
-}
-.collapse-enter-active,
-.collapse-leave-active {
-  transition: all 0.2s;
-  max-height: 230px;
-}
-.collapse-enter,
-.collapse-leave-to
-{
-  opacity: 0;
-  max-height: 0px;
-}
+<style lang="scss">
+  @import "../assets/styles/roomDetailsSpecific.scss"
 </style>

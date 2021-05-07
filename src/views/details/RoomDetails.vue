@@ -71,9 +71,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.detailsList {
-  margin-right: 50px;
-}
-</style>

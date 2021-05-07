@@ -1,0 +1,96 @@
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.home {
+	background-color: #3a434d;
+}
+#app {
+	margin-left: 25px;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: left;
+	color: white;
+}
+#nav {
+	padding: 30px 30px 30px 0;
+	a { text-decoration: none;
+	font-weight: bold;
+	color: #96afc7;
+    }
+}
+html {
+	background-color: #303841;
+}
+label {
+	color: #a6b0cf;
+}
+.loader {
+	margin: auto;
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid #a6b0cf;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	background-color: #303841;
+}
+.fl-left {
+	float: left;
+}
+.fl-right {
+	float: right;
+}
+[class*="col-"] {
+	width: 100%;
+}
+@media only screen and (min-width: 768px) {
+	.col-1 {
+		width: 8.33%;
+	}
+	.col-2 {
+		width: 16.66%;
+	}
+	.col-3 {
+		width: 25%;
+	}
+	.col-4 {
+		width: 33.33%;
+	}
+	.col-5 {
+		width: 41.66%;
+	}
+	.col-6 {
+		width: 50%;
+	}
+	.col-7 {
+		width: 58.33%;
+	}
+	.col-8 {
+		width: 66.66%;
+	}
+	.col-9 {
+		width: 75%;
+	}
+	.col-10 {
+		width: 83.33%;
+	}
+	.col-11 {
+		width: 91.66%;
+	}
+	.col-12 {
+		width: 100%;
+	}
+	#app {
+		margin-left: 20%;
+	}
+	.ta-right {
+		text-align: right;
+		padding-right: 20px;
+	}
+}
