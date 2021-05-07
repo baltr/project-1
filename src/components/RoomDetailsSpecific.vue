@@ -9,22 +9,24 @@
         <label for="end">END</label>
         <div id="end">{{ endTime }}</div>
       </div>
-      <div v-if="isVisible" class="col-5 fl-left specDetail">
-        <label for="org">ORGANIZER</label>
-        <div id="org">{{ details.organizer }}</div>
-      </div>
-      <div v-if="isVisible" class="col-5 fl-right specDetail ta-right">
-        <label for="no">ATTENDEES</label>
-        <div id="no">{{ details.attendees }}</div>
-      </div>
       <div @click="emitActiveEvent" class="col-12 fl-left specDetail cursor">
         <label for="summ">SUMMARY</label>
         <div id="summ"><span v-html="details.summary" /></div>
       </div>
-      <div v-if="isVisible" class="col-12 fl-left specDetail">
-        <label for="desc">DESCRIPTION</label>
-        <div id="desc" class="description">
-          <span v-html="details.description" />
+      <div v-if="isVisible">
+        <div class="col-5 fl-left specDetail">
+          <label for="org">ORGANIZER</label>
+          <div id="org">{{ details.organizer }}</div>
+        </div>
+        <div v-if="isVisible" class="col-5 fl-right specDetail ta-right">
+          <label for="no">ATTENDEES</label>
+          <div id="no">{{ details.attendees }}</div>
+        </div>
+        <div v-if="isVisible" class="col-12 fl-left specDetail">
+          <label for="desc">DESCRIPTION</label>
+          <div id="desc" class="description">
+            <span v-html="details.description" />
+          </div>
         </div>
       </div>
     </div>
