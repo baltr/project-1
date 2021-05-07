@@ -4,7 +4,7 @@
       <div class="name fl-left">
         <h4>{{ room.name }}</h4>
       </div>
-      <div class="fl-left">
+      <div class="fl-right">
         <img src="@/assets/arrow_right.png" />
       </div>
     </div>
@@ -26,7 +26,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-  @import "../assets/styles/room.scss"
-</style>

@@ -8,6 +8,12 @@ label {
 	a {
 		text-decoration: revert;
 		color: #673ab7;
+		&visited{
+			color: #673ab7;
+		}
+		&hover{
+			color: #673ab7;
+		}
 	}
 }
 .specDetail {
@@ -18,7 +24,6 @@ label {
 }
 .description {
 	padding-right: 20px;
-	text-align: justify;
 }
 .collapse-enter-active {
 	transition: all 0.2s;

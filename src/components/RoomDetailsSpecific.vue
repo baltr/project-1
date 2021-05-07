@@ -11,19 +11,19 @@
       </div>
       <div @click="emitActiveEvent" class="col-12 fl-left specDetail cursor">
         <label for="summ">SUMMARY</label>
-        <div id="summ"><span v-html="details.summary" /></div>
+        <div id="summ" class="description"><span v-html="details.summary" /></div>
       </div>
       <transition name="collapse">
         <div v-if="isVisible">
-          <div class="col-5 fl-left specDetail">
+          <div class="col-9 fl-left specDetail">
             <label for="org">ORGANIZER</label>
-            <div id="org">{{ details.organizer }}</div>
+            <div id="org" class="description">{{ details.organizer }}</div>
           </div>
-          <div v-if="isVisible" class="col-5 fl-right specDetail ta-right">
-            <label for="no">ATTENDEES</label>
+          <div class="col-2 fl-right specDetail ta-right">
+            <label for="no">ATTENDEE</label>
             <div id="no">{{ details.attendees }}</div>
           </div>
-          <div v-if="isVisible" class="col-12 fl-left specDetail">
+          <div class="col-12 fl-left specDetail">
             <label for="desc">DESCRIPTION</label>
             <div id="desc" class="description">
               <span v-html="details.description" />
@@ -34,8 +34,6 @@
     </div>
   </div>
 </template>
-
-<!-- ADD TRANSITIONS -->
 
 <script>
 import { DateTime } from "luxon";
@@ -63,15 +61,8 @@ export default {
       return DateTime.fromISO(this.details.end).toFormat("d. M. yyyy. H:mm");
     },
     isVisible() {
-      if (this.details.id != this.activeEvent) {
-        return false;
-      }
-      return true;
+      return this.details.id === this.activeEvent
     },
   },
 };
 </script>
-
-<style lang="scss">
-  @import "../assets/styles/roomDetailsSpecific.scss"
-</style>

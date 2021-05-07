@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<!-- ADD CACHING -->
+<!-- IMPLEMENT STORE PROPERLY -->
 
 <script>
 import Room from "@/components/Room.vue";
