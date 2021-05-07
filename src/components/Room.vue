@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'details', params: passParams }">
+  <router-link :to="routePath">
     <div class="fl-left room col-12">
       <div class="name fl-left">
         <h4>{{ room.name }}</h4>
@@ -20,12 +20,9 @@ export default {
     },
   },
   computed: {
-    passParams() {
-      return {
-        roomName: this.room.name,
-        id: this.room.id,
-      };
-    },
+    routePath(){
+      return `/details/${this.room.name}/${this.room.id}`
+    }
   },
 };
 </script>
@@ -51,6 +48,7 @@ a {
 }
 .room:hover {
   background-color: #673ab7;
+  transition: all 0.3s ease;
 }
 .name {
   width: 92%;
